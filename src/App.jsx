@@ -50,9 +50,9 @@ export function App() {
     return (
       <>
         <div className="min-h-screen bg-base p-5 pb-10">
-          <Header data={data} />
           <div className="md:flex md:justify-center">
             <div className="md:basis-1/2">
+          <Header data={dåata} />
           {data.pages.map((page) => {
             return page.products.map((item) => {
               return (
