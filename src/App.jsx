@@ -51,6 +51,8 @@ export function App() {
       <>
         <div className="min-h-screen bg-base p-5 pb-10">
           <Header data={data} />
+          <div className="md:flex md:justify-center">
+            <div className="md:basis-1/2">
           {data.pages.map((page) => {
             return page.products.map((item) => {
               return (
@@ -62,6 +64,8 @@ export function App() {
               )
             })
           })}
+            </div>
+          </div>
           {isFetching &&
             <div className="flex justify-center mt-5">
               <ArrowPathIcon className="size-8 text-light animate-spin" />

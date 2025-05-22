@@ -14,4 +14,15 @@
     .card {
         @apply bg-white rounded-lg shadow flex w-full;
     }
+
+    .form-group {
+        @apply mb-3;
+    
+        & :is(input[type=text]) {
+          @apply bg-gray-50 outline-none text-sm p-2.5 border w-full rounded-md block;
+          @apply disabled:border-none disabled:cursor-not-allowed;
+          border-color: var(--color-base);
+          color: var(--color-secondary);
+        }
+      }
 }
