@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: var(--color-pink-500);
+    --color-hover: var(--color-gray-100);
+    --color-base: var(--color-gray-300);
+    --color-light: var(--color-gray-400);
+    --color-text: var(--color-gray-600);
+    --color-error: var(--color-red-400);
+  }
+
+@layer components {
+
+    .card {
+        @apply bg-white rounded-lg shadow flex w-full;
+    }
+}

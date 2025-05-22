@@ -1,0 +1,5 @@
+GET https://dummyjson.com/products?limit=10&skip=10&select=title,id,description,price
+
+###
+
+GET http://dummyjson.com/products?limit=10&skip=10&select=title,id,description,price

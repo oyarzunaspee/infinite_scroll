@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "7c5fb523-0c9a-4b3e-af65-cd39815407ff"
+      }
+    },
+    "android": {
+      "package": "com.postportmenria.infinite"
+    }
+  }
+}
