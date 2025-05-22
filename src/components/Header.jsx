@@ -37,8 +37,6 @@ function Header(props) {
             </h1>
             
         </div>
-
-        <StickyHeader count={count} />
         </>
     )
 }
