@@ -21,8 +21,6 @@ export function App() {
     }
   }, [search])
 
-  console.log(data)
-
   const handleScroll = () => {
     if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight && !isFetching && !isLoading) {
       fetchNextPage()
