@@ -21,6 +21,10 @@ export function App() {
     }
   }, [search])
 
+  useEffect(() => {
+    refetch()
+  }, [limit])
+
   const handleScroll = () => {
     if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight && !isFetching && !isLoading) {
       fetchNextPage()

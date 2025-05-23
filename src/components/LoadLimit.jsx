@@ -1,4 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
+import { useState, useEffect, useRef } from "preact/hooks";
 import { useDispatch } from "react-redux";
 import { changeLimit } from '../store/reducers/limit.js';
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
@@ -16,9 +16,27 @@ function LoadLimit(props) {
     const handleLoadChange = (value) => {
         if (loads.includes(value)) {
             dispatch(changeLimit(value))
-            setOpenLimitDropDown(false)
         }
+        
     }
+
+    const handleOutsideClick = (ref) => {
+        useEffect(() => {
+              function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    setOpenLimitDropDown(false)
+                }
+              }
+        
+              document.addEventListener("mousedown", handleClickOutside);
+              return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+              };
+            }, [ref]);
+    }
+
+    const ref = useRef(null);
+    handleOutsideClick(ref)
 
     return (
         <>
@@ -32,7 +50,7 @@ function LoadLimit(props) {
                     transition-height duration-200 ease-in-out overflow-hidden
                     ${openLimitDropDown ? "max-h-100" : "max-h-0"}
                     `}>
-                    <ul className="bg-white rounded border border-base">
+                    <ul ref={ref} className="bg-white rounded border border-base">
                         {loads.map((item) => {
                             return (
                                 <li

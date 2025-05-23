@@ -5,6 +5,7 @@
   "type": "module",
   "homepage": "https://oyarzunaspee.github.io/infinite_scroll",
   "scripts": {
+    "dev": "vite --open --port 3000",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",

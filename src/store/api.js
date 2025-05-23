@@ -33,7 +33,7 @@ export const api = createApi({
             },
             query({ queryArg, pageParam }) {
                 const defaultLimit = 10
-                return `products${queryArg.search ?  "/search?q=" + queryArg.search + "&" : "?"}limit=${queryArg.limit || defaultLimit}&skip=${pageParam * 10}&select=title,id,description,price,images`
+                return `products${queryArg.search ?  "/search?q=" + queryArg.search + "&" : "?"}limit=${queryArg.limit || defaultLimit}&skip=${pageParam * queryArg.limit}&select=title,id,description,price,images`
             },
         }),
         providesTags: ["products"],
