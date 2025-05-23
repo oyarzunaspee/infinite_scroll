@@ -12,7 +12,6 @@ function Header(props) {
 
     useEffect(() => {
         if (props.data) {
-            console.log(props.data)
             // calculate total of loaded items by adding last page amount of items
             setCount(
                 prev => prev + props.data.pages.at(-1).products.length
