@@ -1,6 +1,6 @@
 import Search from "./Search.jsx";
 import LoadLimit from "./LoadLimit.jsx";
-import { useState, useEffect } from "preact/hooks";
+import { useState, useEffect, useMemo } from "preact/hooks";
 import { useSelector } from "react-redux";
 
 
@@ -12,6 +12,7 @@ function Header(props) {
 
     useEffect(() => {
         if (props.data) {
+            console.log(props.data)
             // calculate total of loaded items by adding last page amount of items
             setCount(
                 prev => prev + props.data.pages.at(-1).products.length
@@ -19,9 +20,11 @@ function Header(props) {
         }
     }, [props.data])
 
-    useEffect(() => {
-        setCount(props.data.pages.at(-1).products.length)
-    }, [props.data, limit])
+    useMemo(() => {
+        if (count > 0) {
+            setCount(0)
+        }
+    }, [limit])
 
     return (
         <>
